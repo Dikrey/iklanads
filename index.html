@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Optimized Auto Ad Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-red-start: #ff416c;
+      --secondary-red-end: #ff4b2b;
+      --light-gray: #f3f4f6;
+      --dark-gray: #333;
+      --white: #fff;
+      --shadow: rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light-gray);
+      color: var(--dark-gray);
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px var(--shadow);
+      max-width: 450px;
+      margin: 30px auto;
+      transform: translateY(0);
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px var(--shadow);
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: var(--primary-blue);
+      font-weight: 700;
+      font-size: 1.8em;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      margin: 12px 0;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--white);
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    #autoBtn {
+      background: var(--primary-blue);
+    }
+
+    #autoBtn:hover {
+      background: #1a4ed8; /* Darker shade of blue */
+    }
+
+    #stopBtn {
+      background: linear-gradient(to right, var(--secondary-red-start), var(--secondary-red-end));
+    }
+
+    #stopBtn:hover {
+      background: linear-gradient(to right, #e03a5e, #e04225); /* Darker shades */
+    }
+
+    #timer {
+      font-size: 19px;
+      margin-top: 20px;
+      display: none;
+      color: var(--primary-blue);
+      font-weight: 600;
+    }
+
+    #count {
+      font-weight: 700;
+      color: var(--secondary-red-end);
+    }
+
+    .ad-block {
+      margin: 30px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: var(--white);
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      max-width: 728px; /* Max width for larger banners */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .ad-block {
+        margin: 20px auto;
+        max-width: 100%;
+      }
+      .container {
+        padding: 20px;
+        margin: 20px auto;
+      }
+      h2 {
+        font-size: 1.6em;
+      }
+      button {
+        padding: 14px;
+        font-size: 16px;
+      }
+      #timer {
+        font-size: 17px;
+      }
+    }
+  </style>
+
+  <script type='text/javascript' src='//pl26946769.profitableratecpm.com/38/ea/51/38ea51398fa02dfda59639b4f6fa109b.js' async></script>
+</head>
+<body>
+
+  <div class="ad-block">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '507e31164c2ef7f5f3e69ac9712f8a94',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/507e31164c2ef7f5f3e69ac9712f8a94/invoke.js" async></script>
+  </div>
+
+  <div class="container">
+    <h2>Supercharge Your Ads</h2>
+    <p>Activate auto-refresh to maximize ad impressions and revenue.</p>
+    <button id="autoBtn" onclick="startAutoRefresh()">Activate Auto Ads</button>
+    <button id="stopBtn" onclick="stopAutoRefresh()">Stop Auto Ads</button>
+    <div id="timer">Next refresh in <span id="count">30</span>s</div>
+
+    <div class="ad-block">
+      <script async="async" data-cfasync="false" src="//pl26910486.profitableratecpm.com/9095f38af9c76eecc4eea926d9942cbf/invoke.js"></script>
+      <div id="container-9095f38af9c76eecc4eea926d9942cbf"></div>
+    </div>
+  </div>
+
+  <div class="ad-block">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '81cfa983e7ca47cc21902cb55674c554',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/81cfa983e7ca47cc21902cb55674c554/invoke.js" async></script>
+  </div>
+
+  <script type='text/javascript' src='//pl26910542.profitableratecpm.com/0a/36/75/0a3675437fdc65479300c78b91f71e1d.js' async></script>
+
+  <script>
+    let refreshActive = false;
+    let countdown = 30;
+    let timerInterval;
+    const initialCountdown = 30; // Define initial countdown value for consistency
+
+    function startAutoRefresh() {
+      if (refreshActive) return; // Prevent multiple activations
+      refreshActive = true;
+      document.getElementById("timer").style.display = "block";
+      countdown = initialCountdown; // Reset countdown
+      document.getElementById("count").textContent = countdown;
+
+      timerInterval = setInterval(() => {
+        countdown--;
+        document.getElementById("count").textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(timerInterval);
+          // Using a slight delay before reload to ensure all ad impressions are registered
+          setTimeout(() => {
+            location.reload();
+          }, 500);
+        }
+      }, 1000);
+    }
+
+    function stopAutoRefresh() {
+      if (!refreshActive) return; // Only stop if active
+      refreshActive = false;
+      clearInterval(timerInterval);
+      document.getElementById("timer").style.display = "none";
+    }
+
+    // Function to initialize ads (useful if ads need re-initialization on refresh)
+    function initializeAds() {
+      // Re-invoke ad scripts if they are dynamic and need to be reloaded
+      // This is generally handled by location.reload(), but can be useful for SPA-like behavior
+      // For this specific setup, location.reload() handles the ad re-initialization
+    }
+
+    // ✅ Auto restart logic
+    window.addEventListener('load', function() {
+      try {
+        // Check if the page was reloaded by our auto-refresh mechanism
+        if (sessionStorage.getItem('autoRefreshTriggered') === 'true') {
+          sessionStorage.removeItem('autoRefreshTriggered'); // Clear flag
+          startAutoRefresh();
+        } else if (document.referrer.includes(window.location.hostname)) {
+          // Fallback to referrer check, though sessionStorage is more reliable for internal reloads
+          startAutoRefresh();
+        }
+      } catch (e) {
+        console.error("Session storage access denied or other error:", e);
+        // Fallback for environments where sessionStorage might be restricted
+        if (document.referrer.includes(window.location.hostname)) {
+          startAutoRefresh();
+        }
+      }
+    });
+
+    // Set flag before reloading
+    window.addEventListener('beforeunload', function() {
+      if (refreshActive) {
+        sessionStorage.setItem('autoRefreshTriggered', 'true');
+      }
+    });
+
+    // Initial ad loading can be placed here or remain inline.
+    // Ensure all critical scripts for ad loading are handled efficiently.
+  </script>
+</body>
+</html>
